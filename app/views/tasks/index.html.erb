@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>My tasks</h1>
+  <ul class="list-group">
+    <% @tasks.each do |task|%>
+      <li class="list-group-item rounded"><input type="checkbox" <%= "checked" if task.completed %>/><%= link_to task.title, task_path(task)%></li>
+    <%end%>
+  </ul>
+  <%= link_to "Create new task", new_task_path%>
+</div>
